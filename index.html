@@ -1,1 +1,116 @@
-My GitHub Page
+<!doctype html>
+<html ng-app>
+<head>
+   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
+   <script src="//cdnjs.cloudflare.com/ajax/libs/fastclick/0.6.7/fastclick.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.10/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.10/angular-touch.min.js"></script>
+    <script src="ui-bootstrap-tpls-0.11.0.min.js"></script>
+    <script src="assets/controllers.js"></script>
+     <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+   <meta charset="utf-8">
+   <meta http-equiv="Content-Type" content="text/html">
+   <title>Angular Portfolio Site</title>
+   <link rel="stylesheet" type="text/css" media="all" href="css/styles.css">
+</head>
+
+<body ng-controller="GitHubCtrl">
+
+<div id="w">
+   <div>
+      <h1>Portfolio Site</h1>
+
+      <p>Enter a single Github username below and click the button to display profile info.</p>
+
+      <input type="text" id="ghusername" ng-model="username" placeholder="Github username...">
+      <a href="#" id="ghsubmitbtn" ng-click="getGitInfo()">Pull User Data</a>
+
+      <div id="ghapidata" class="clearfix"></div>
+   </div>
+   <div ng-show="userNotFound">
+      <h2>No User Info Found</h2>
+   </div>
+   <div ng-show="loaded">
+
+      <h2> {{user.name}}
+         <span class="smallname">(@<a href="{{user.html_url}}" target="_blank"> {{user.login}} </a>)</span>
+      </h2>
+
+      <div class="ghcontent">
+         <div class="avi">
+            <a href="{{ user.html_url }}" target="_blank">
+               <img src="{{ user.avatar_url }}" width="80" height="80" alt="{{ user.login }}"></a>
+         </div>
+         Followers: {{ user.followers }} - Following: {{ user.following }}<br>Repos: {{ user.public_repos }}</p>
+      </div>
+
+      <div class="repolist clearfix">
+         <p ng-hide="reposFound">No repos!</p>
+
+         <div ng-show="reposFound">
+            <p><strong>Repos List:</strong></p>
+            <ul ng-repeat="repo in repos">
+               <li><a href="{{repo.html_url}}" target="_blank"> {{repo.name}} </a></li>
+            </ul>
+         </div>
+      </div>
+   </div>
+   
+</div>
+<div ng-controller="DropdownCtrl">
+    <!-- Simple dropdown -->
+    <span class="dropdown" on-toggle="toggled(open)">
+      <a href class="dropdown-toggle">
+        Click me for a dropdown, yo!
+      </a>
+      <ul class="dropdown-menu">
+        <li ng-repeat="choice in items">
+          <a href>{{choice}}</a>
+        </li>
+      </ul>
+    </span>
+
+    <!-- Single button -->
+    <div class="btn-group" dropdown is-open="status.isopen">
+      <button type="button" class="btn btn-primary dropdown-toggle" ng-disabled="disabled">
+        Button dropdown <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu" role="menu">
+        <li><a href="#">Action</a></li>
+        <li><a href="#">Another action</a></li>
+        <li><a href="#">Something else here</a></li>
+        <li class="divider"></li>
+        <li><a href="#">Separated link</a></li>
+      </ul>
+    </div>
+
+    <!-- Split button -->
+    <div class="btn-group" dropdown>
+      <button type="button" class="btn btn-danger">Action</button>
+      <button type="button" class="btn btn-danger dropdown-toggle">
+        <span class="caret"></span>
+        <span class="sr-only">Split button!</span>
+      </button>
+      <ul class="dropdown-menu" role="menu">
+        <li><a href="#">Action</a></li>
+        <li><a href="#">Another action</a></li>
+        <li><a href="#">Something else here</a></li>
+        <li class="divider"></li>
+        <li><a href="#">Separated link</a></li>
+      </ul>
+    </div>
+
+    <hr />
+    <p>
+        <button type="button" class="btn btn-default btn-sm" ng-click="toggleDropdown($event)">Toggle button dropdown</button>
+        <button type="button" class="btn btn-warning btn-sm" ng-click="disabled = !disabled">Enable/Disable</button>
+    </p>
+
+</div>
+
+<script>
+  
+</script>
+
+</body>
+</html>
