@@ -1,17 +1,21 @@
 <!doctype html>
-<html ng-app>
+<html ng-app="myProject">
 <head>
-   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
-   <script src="//cdnjs.cloudflare.com/ajax/libs/fastclick/0.6.7/fastclick.min.js"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.10/angular.min.js"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.10/angular-touch.min.js"></script>
-   
-  
-     <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
    <meta charset="utf-8">
    <meta http-equiv="Content-Type" content="text/html">
-   <title>Angular Portfolio Site</title>
+   
+   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
+   <script src="//cdnjs.cloudflare.com/ajax/libs/fastclick/0.6.7/fastclick.min.js"></script>
+   <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.10/angular.min.js"></script>
+   <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.10/angular-touch.min.js"></script>
+   <script src="ui-bootstrap-tpls-0.11.0.min.js"></script>
+   <script src="assets/controllers.js"></script>
+  
+   <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
    <link rel="stylesheet" type="text/css" media="all" href="css/styles.css">
+   
+   <title>Angular Portfolio Site</title>
+   
 </head>
 <body>
 <!--<body ng-controller="GitHubCtrl">
@@ -57,6 +61,16 @@
    </div>
    
 </div>-->
+<div ng-controller="TabsDemoCtrl">
+  <p>Select a tab by setting active binding to true:</p>
+  <p>
+    <button class="btn btn-default btn-sm" ng-click="tabs[0].active = true">Select second tab</button>
+    <button class="btn btn-default btn-sm" ng-click="tabs[1].active = true">Select third tab</button>
+  </p>
+  <p>
+    <button class="btn btn-default btn-sm" ng-click="tabs[1].disabled = ! tabs[1].disabled">Enable / Disable third tab</button>
+  </p>
+  </div>
 <div ng-controller="DropdownCtrl">
     <!-- Simple dropdown -->
     <span class="dropdown" on-toggle="toggled(open)">
@@ -108,7 +122,6 @@
 
 </div>
 
-<script src="ui-bootstrap-tpls-0.11.0.min.js"></script>
-<script src="assets/controllers.js"></script>
+
 </body>
 </html>
