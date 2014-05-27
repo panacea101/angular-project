@@ -1,3 +1,4 @@
+angular.module('myModule', ['ui.bootstrap']);
 function DropdownCtrl($scope) {
   $scope.items = [
     'The first choice!',
