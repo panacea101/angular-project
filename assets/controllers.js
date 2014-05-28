@@ -1,11 +1,11 @@
-angular.module('myProject', ['ui.bootstrap']);
-var TabsDemoCtrl = function ($scope) {
+var app = angular.module('myProject', ['ui.bootstrap']);
+app.controller('TabsDemoCtrl', function ($scope) {
   $scope.tabs = [
     { title:'Dynamic Title 1', content:'Dynamic content 1' },
     { title:'Dynamic Title 2', content:'Dynamic content 2', disabled: true }
   ];
-
-function DropdownCtrl($scope) {
+});
+app.controller ('DropdownCtrl',function ($scope) {
   $scope.items = [
     'The first choice!',
     'And another choice for you.',
@@ -25,7 +25,8 @@ function DropdownCtrl($scope) {
     $event.stopPropagation();
     $scope.status.isopen = !$scope.status.isopen;
   };
-}
+});
+
  function GitHubCtrl($scope, $http) {
       $scope.getGitInfo = function () {
          $scope.userNotFound = false;
@@ -45,4 +46,4 @@ function DropdownCtrl($scope) {
             $scope.reposFound = data.length > 0;
          });
       }
-   }
+  }
