@@ -1,4 +1,41 @@
 var app = angular.module('myProject', ['ui.bootstrap']);
+
+app.config(function($stateProvider, $routeProvider){
+    $stateProvider
+        .state('index', {
+            url: "",
+            views: {
+                "viewA": {
+                    templateUrl: "index.viewA.html"
+                },
+                "viewB": {
+                    templateUrl: "index.viewB.html"
+                }
+            }
+        })
+        .state('route1', {
+            url: "/route1",
+            views: {
+                "viewA": {
+                    templateUrl: "route1.viewA.html"
+                },
+                "viewB": {
+                    templateUrl: "route1.viewB.html"
+                }
+            }
+        })
+        .state('route2', {
+            url: "/route2",
+            views: {
+                "viewA": {
+                    templateUrl: "route2.viewA.html"
+                },
+                "viewB": {
+                    templateUrl: "route2.viewB.html"
+                }
+            }
+        })
+    })
 app.controller('TabsDemoCtrl', function ($scope) {
   $scope.tabs = [
     { title:'Dynamic Title 1', content:'Dynamic content 1' },
