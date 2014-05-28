@@ -17,7 +17,7 @@
    <title>Angular Portfolio Site</title>
    
 </head>
-<body>
+<body class="container">
 <!--<body ng-controller="GitHubCtrl">
 
 <div id="w">
@@ -61,6 +61,30 @@
    </div>
    
 </div>-->
+   <div class="navbar">
+      <div class="navbar-inner">
+        <a class="brand" href="#">Quick Start</a>
+        <ul class="nav">
+          <li>
+            <a href="#">Home</a>
+          </li>
+          <li>
+            <a href="#/route1">Route 1</a>
+          </li>
+          <li>
+            <a href="#/route2">Route 2</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="row">
+      <div class="span6">
+        <div class="well" ui-view="viewA"></div>
+      </div>
+      <div class="span6">
+        <div class="well" ui-view="viewB"></div>
+      </div>
+    </div>
 <div ng-controller="TabsDemoCtrl">
   <p>Select a tab by setting active binding to true:</p>
   <p>
