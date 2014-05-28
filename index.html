@@ -61,31 +61,7 @@
    </div>
    
 </div>-->
-   <div class="navbar">
-      <div class="navbar-inner">
-        <a class="brand" href="#">Quick Start</a>
-        <ul class="nav">
-          <li>
-            <a href="#">Home</a>
-          </li>
-          <li>
-            <a href="#/route1">Route 1</a>
-          </li>
-          <li>
-            <a href="#/route2">Route 2</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-    <div class="row">
-      <div class="span6">
-        <div class="well" ui-view="viewA"></div>
-      </div>
-      <div class="span6">
-        <div class="well" ui-view="viewB"></div>
-      </div>
-    </div>
-<div ng-controller="TabsDemoCtrl">
+ <div ng-controller="TabsDemoCtrl">
   <p>Select a tab by setting active binding to true:</p>
   <p>
     <button class="btn btn-default btn-sm" ng-click="tabs[0].active = true">Select second tab</button>
@@ -94,7 +70,6 @@
   <p>
     <button class="btn btn-default btn-sm" ng-click="tabs[1].disabled = ! tabs[1].disabled">Enable / Disable third tab</button>
   </p>
-  </div>
   <hr />
 
   <tabset>
@@ -110,59 +85,21 @@
     </tab>
   </tabset>
 
-  <hr /> 
-  
-<div ng-controller="DropdownCtrl">
-    <!-- Simple dropdown -->
-    <span class="dropdown" on-toggle="toggled(open)">
-      <a href class="dropdown-toggle">
-        Click me for a dropdown, yo!
-      </a>
-      <ul class="dropdown-menu">
-        <li ng-repeat="choice in items">
-          <a href>{{choice}}</a>
-        </li>
-      </ul>
-    </span>
+  <hr />
 
-    <!-- Single button -->
-    <div class="btn-group" dropdown is-open="status.isopen">
-      <button type="button" class="btn btn-primary dropdown-toggle" ng-disabled="disabled">
-        Button dropdown <span class="caret"></span>
-      </button>
-      <ul class="dropdown-menu" role="menu">
-        <li><a href="#">Action</a></li>
-        <li><a href="#">Another action</a></li>
-        <li><a href="#">Something else here</a></li>
-        <li class="divider"></li>
-        <li><a href="#">Separated link</a></li>
-      </ul>
-    </div>
+  <tabset vertical="true" type="pills">
+    <tab heading="Vertical 1">Vertical content 1</tab>
+    <tab heading="Vertical 2">Vertical content 2</tab>
+  </tabset>
 
-    <!-- Split button -->
-    <div class="btn-group" dropdown>
-      <button type="button" class="btn btn-danger">Action</button>
-      <button type="button" class="btn btn-danger dropdown-toggle">
-        <span class="caret"></span>
-        <span class="sr-only">Split button!</span>
-      </button>
-      <ul class="dropdown-menu" role="menu">
-        <li><a href="#">Action</a></li>
-        <li><a href="#">Another action</a></li>
-        <li><a href="#">Something else here</a></li>
-        <li class="divider"></li>
-        <li><a href="#">Separated link</a></li>
-      </ul>
-    </div>
+  <hr />
 
-    <hr />
-    <p>
-        <button type="button" class="btn btn-default btn-sm" ng-click="toggleDropdown($event)">Toggle button dropdown</button>
-        <button type="button" class="btn btn-warning btn-sm" ng-click="disabled = !disabled">Enable/Disable</button>
-    </p>
-
+  <tabset justified="true">
+    <tab heading="Justified">Justified content</tab>
+    <tab heading="SJ">Short Labeled Justified content</tab>
+    <tab heading="Long Justified">Long Labeled Justified content</tab>
+  </tabset>
 </div>
-
 
 </body>
 </html>
