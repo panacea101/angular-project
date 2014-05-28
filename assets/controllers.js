@@ -13,7 +13,7 @@ app.config(function($stateProvider, $routeProvider){
                 }
             }
         })
-        .state('route1', {
+ /*       .state('route1', {
             url: "/route1",
             views: {
                 "viewA": {
@@ -34,8 +34,8 @@ app.config(function($stateProvider, $routeProvider){
                     templateUrl: "route2.viewB.html"
                 }
             }
-        })
-    })
+        })*/
+    })/*
 app.controller('TabsDemoCtrl', function ($scope) {
   $scope.tabs = [
     { title:'Dynamic Title 1', content:'Dynamic content 1' },
@@ -83,4 +83,4 @@ app.controller ('DropdownCtrl',function ($scope) {
             $scope.reposFound = data.length > 0;
          });
       }
-  }
+  }*/
