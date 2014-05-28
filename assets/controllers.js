@@ -1,4 +1,4 @@
-var app = angular.module('myProject', ['ui.bootstrap']);
+var app = angular.module('myProject', ['ui.bootstrap'])
 
 var TabsDemoCtrl = function ($scope) {
   $scope.tabs = [
